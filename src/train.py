@@ -11,7 +11,7 @@ def main(path: str, save_to: str, iters: int):
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
   model = CNN().to(device=device)
   criterion = torch.nn.CrossEntropyLoss()
-  optim = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=1)
+  optim = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=0.1)
 
   # tra!n
   for _ in tqdm(range(iters)):
