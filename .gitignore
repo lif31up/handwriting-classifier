@@ -1,5 +1,12 @@
-/src/data/raw
+# dataset
+/src/data/raw/train
+/src/data/raw/test
+
+# pycharm
 /.idea
 
+# pth
 *.pth
+
+# cache
 **/__pycache__/**
