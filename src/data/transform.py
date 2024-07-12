@@ -15,9 +15,10 @@ def get_dataloader(func: typing.Callable) -> typing.Callable:
 @get_dataloader
 def init_dataloader() -> object:
   return transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.Resize((150, 150)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    transforms.Grayscale(num_output_channels=1),
+    transforms.Normalize(mean=[0.5], std=[0.5])
   ])  ## compose
 # init_dataloader
 
