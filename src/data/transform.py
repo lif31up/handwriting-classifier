@@ -18,7 +18,7 @@ def init_dataloader() -> object:
     transforms.Resize((150, 150)),
     transforms.ToTensor(),
     transforms.Grayscale(num_output_channels=1),
-    transforms.Normalize(mean=[0.5], std=[0.5])
+    transforms.Normalize(mean=[0.5], std=[2.5])
   ])  ## compose
 # init_dataloader
 
