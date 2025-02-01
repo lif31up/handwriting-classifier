@@ -11,8 +11,19 @@ This repository contains a **handwriting classification model** implemented usin
 
 ---
 
-## Usage
-### 1. Train Model
+## Instruction
+### Evaluate Model
+Use this command to evaluate your trained model on a specified dataset.
 ```
-
+python run.py --path <path> --model-path <model_path>
 ```
+* `<path>`: Path to the trained model you wish to interact with.
+* `<model_path>`: Path to the model state file.
+### Train Model
+Train your model on a specified training dataset and set the number of iterations for training.
+```
+python run.py train --path <trainset_path> --save-to <model_path> --iters <number_iterations>
+```
+* `<trainset_path>`: Path to your training data file (e.g., train.json or CSV).
+* `<model_path>`: Path to save the model state file.
+* `<number_iters>`: Number of training iterations to run. This controls how many times the model will learn from the data.
