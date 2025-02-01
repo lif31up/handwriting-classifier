@@ -2,7 +2,7 @@ from tqdm import tqdm
 import torch
 import torchvision as tv
 from torch.utils.data import DataLoader
-from model.ConvNet import ConvNet
+from src.model.ConvNet import ConvNet
 
 def main(path: str, save_to: str, iters: int):
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # init device
@@ -23,6 +23,7 @@ def main(path: str, save_to: str, iters: int):
   optim = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
 
   # training algroithm
+  loss = float()
   for _ in tqdm(range(iters)):
     for x, y in loader:
       loss = criterion(model.forward(x), y)
@@ -35,7 +36,7 @@ def main(path: str, save_to: str, iters: int):
   # saving the weights
   feature = {
     "state": model.state_dict(),
-    "output": n_classes,
+    "n_oupt": n_classes,
     "labels": imageset.classes
   } # feature
   torch.save(feature, save_to)
