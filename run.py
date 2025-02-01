@@ -1,13 +1,9 @@
 import argparse
+
 def train(path: str, save_to: str, iters: int):
   import src.train as trainer
   trainer.main(path, save_to, iters)
 # train
-
-def eval(path: str):
-  import src.eval as evaler
-  evaler.main(path)
-# eval
 
 def main():
   # main cmd
