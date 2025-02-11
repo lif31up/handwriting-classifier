@@ -6,11 +6,11 @@ from src.model.ConvNet import ConvNet
 import torchvision as tv
 import matplotlib.pyplot as plt
 
-def main(path: str, model_path: str):
+def main(path: str, model: str):
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
   # load the model from path
-  saved = torch.load(model_path)
+  saved = torch.load(model)
   model = ConvNet(saved["n_oupt"]).to(device=device)
   model.load_state_dict(saved["state"])
   model.eval()
@@ -33,4 +33,4 @@ def main(path: str, model_path: str):
   print(f"loss: {loss.item():.4f}")  # print result of training
 # main()
 
-if __name__ == "__main__": main(path="../data/raw/omniglot-py/images_background/Korean", model_path="./model/model.pth")
+if __name__ == "__main__": main(path="../data/raw/omniglot-py/images_background/Korean", model="./model/model.pth")

@@ -42,4 +42,4 @@ def main(path: str, save_to: str, iters: int):
   torch.save(feature, save_to)
 # main()
 
-if __name__ == "__main__": main("../data/raw/omniglot-py/images_background/Korean", "./model/model.pth", 5)
+if __name__ == "__main__": main(path="../data/raw/omniglot-py/images_background/Korean", save_to="./model/model.pth", iters=5)
