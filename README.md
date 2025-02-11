@@ -9,17 +9,31 @@ This repository contains a **handwriting classification model** implemented usin
 - **Easy-to-Use**: Simple scripts for training, evaluation, and inference.
 - **Customizable**: Easy to modify the model architecture or dataset for your needs.
 
----
+[Test Result on Colab](https://colab.research.google.com/drive/1ZASlcYiEfuJVXgN3AOC-illJUkQmehhd?usp=sharing)
 
+---
 ## Instruction
-### Evaluate Model
+Organize your dataset into a structure compatible with PyTorch's ImageFolder:
+```
+dataset/
+  ├── class1/
+  │   ├── img1.jpg
+  │   ├── img2.jpg
+  │   └── ...
+  ├── class2/
+  │   ├── img1.jpg
+  │   ├── img2.jpg
+  │   └── ...
+  └── ...
+ ```
+### Evaluate
 Use this command to evaluate your trained model on a specified dataset.
 ```
 python run.py --path <path> --model-path <model_path>
 ```
 * `<path>`: Path to the trained model you wish to interact with.
 * `<model_path>`: Path to the model state file.
-### Train Model
+### Train
 Train your model on a specified training dataset and set the number of iterations for training.
 ```
 python run.py train --path <trainset_path> --save-to <model_path> --iters <number_iterations>
@@ -27,19 +41,3 @@ python run.py train --path <trainset_path> --save-to <model_path> --iters <numbe
 * `<trainset_path>`: Path to your training data file (e.g., train.json or CSV).
 * `<model_path>`: Path to save the model state file.
 * `<number_iters>`: Number of training iterations to run. This controls how many times the model will learn from the data.
-### 모델 평가
-학습된 모델을 지정된 데이터셋에서 평가하려면 다음 명령어를 사용하세요.
-```
-python run.py --path <path> --model-path <model_path>
-```
-* `<path>`: 상호작용하려는 학습된 모델의 경로입니다.
-* `<model_path>`: 모델 상태 파일의 경로입니다.
-### 모델 학습
-지정된 학습 데이터셋에서 모델을 학습시키고, 학습 반복 횟수를 설정하세요.
-```
-python run.py train --path <trainset_path> --save-to <model_path> --iters <number_iterations>
-```
-* `<trainset_path>`: 학습 데이터 파일의 경로입니다 (예: train.json 또는 CSV).
-* `<model_path>`: 모델 상태 파일을 저장할 경로입니다.
-
-

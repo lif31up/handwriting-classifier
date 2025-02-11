@@ -1,10 +1,7 @@
-import random
-
 import torch
 from torch.utils.data import DataLoader
 from src.model.ConvNet import ConvNet
 import torchvision as tv
-import matplotlib.pyplot as plt
 
 def main(path: str, model: str):
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
